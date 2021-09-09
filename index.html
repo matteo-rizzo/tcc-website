@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Temporal Color Constancy (TCC)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-text-white">
+    <div id="big-nav" class="w3-bar">
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+           onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-question-circle"></i> ABOUT</a>
+        <a href="#papers" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-pencil"></i> PAPERS</a>
+        <a href="#datasets" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-database"></i> DATASETS</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="small-nav" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+        <a href="#papers" class="w3-bar-item w3-button" onclick="toggleFunction()">PAPERS</a>
+        <a href="#datasets" class="w3-bar-item w3-button" onclick="toggleFunction()">DATASETS</a>
+    </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-text-white" id="home">
+    <div class="w3-display-middle w3-center w3-padding-16" style="background-color: black">
+        <span id="title" class="w3-padding-large w3-xxlarge w3-animate-opacity">
+            Temporal Color Constancy (TCC)
+        </span>
+        <br>
+        <span id="subtitle" class="w3-padding-large w3-xlarge w3-animate-opacity">
+            Research website on illuminant color estimation
+        </span>
+    </div>
+</div>
+
+<!-- Main content -->
+
+<div class="w3-main w3-padding-small">
+    <!-- About -->
+    <div class="w3-content w3-container w3-padding-64" id="about">
+        <h2 class="w3-center">WHAT IS TCC?</h2>
+        <p class="w3-center"><em>Illuminant estimation leveraging temporal information</em></p>
+        <p>
+            Computational Colour Constancy (CCC) consists of estimating the colour of one or more illuminants in a scene
+            and
+            using them to remove unwanted chromatic distortions. The Temporal Colour Constancy (TCC) task pursue the
+            same
+            aim but leverages the temporal information intrinsic in sequences of correlated images (e.g., the frames in
+            a
+            video).
+        </p>
+        <hr>
+        <div class="w3-center w3-container">
+            <h3> How color constancy works in general</h3>
+            <div class="w3-image"><img src="img/ccc.png" alt="ccc"></div>
+        </div>
+        <hr>
+        <div class="w3-center w3-container">
+            <h3> How TCC works specifically</h3>
+            <div class="w3-image"><img src="img/multi-frame.png" alt="multi-frame-ccc"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Papers -->
+    <div class="w3-content w3-container w3-padding-64" id="papers">
+        <h2 class="w3-center">RELEVANT PAPERS ON TCC</h2>
+        <div>
+            <h4><a href="https://arxiv.org/abs/2106.07955">Cascading Convolutional Temporal Colour Constancy</a></h4>
+            <p><em>Matteo Rizzo, Cristina Conati, Daesik Jang, Hui Hu (ArXiv, 2021)
+                [<a href="https://github.com/matteo-rizzo/cctcc">https://github.com/matteo-rizzo/cctcc</a>]</em></p>
+            <p>
+                Computational Colour Constancy (CCC) consists of estimating the colour of one or more illuminants in
+                a scene and using them to remove unwanted chromatic distortions. Much research has focused on
+                illuminant estimation for CCC on single images, with few attempts of leveraging the temporal
+                information intrinsic in sequences of correlated images (e.g., the frames in a video), a task known
+                as Temporal Colour Constancy (TCC). The state-of-the-art for TCC is TCCNet, a deep-learning
+                architecture that uses a ConvLSTM for aggregating the encodings produced by CNN submodules for each
+                image in a sequence. We extend this architecture with different models obtained by (i) substituting
+                the TCCNet submodules with C4, the state-of-the-art method for CCC targeting images; (ii) adding a
+                cascading strategy to perform an iterative improvement of the estimate of the illuminant. We tested
+                our models on the recently released TCC benchmark and achieved results that surpass the
+                state-of-the-art. Analyzing the impact of the number of frames involved in illuminant estimation on
+                performance, we show that it is possible to reduce inference time by training the models on few
+                selected frames from the sequences while retaining comparable accuracy.
+            </p>
+        </div>
+        <hr>
+        <div>
+            <h4><a href="https://arxiv.org/abs/2003.03763">A Benchmark for Temporal Color Constancy</a></h4>
+            <p><em>Yanlin Qian, Jani Käpylä, Joni-Kristian Kämäräinen, Samu Koskinen, Jiri Matas (ArXiv, 2020)
+                [<a href="https://github.com/yanlinqian/Temporal-Color-Constancy">https://github.com/yanlinqian/Temporal-Color-Constancy</a>]</em>
+            </p>
+            <p>
+                Temporal Color Constancy (CC) is a recently proposed approach that challenges the conventional
+                single-frame
+                color constancy. The conventional approach is to use a single frame - shot frame - to estimate the scene
+                illumination color. In temporal CC, multiple frames from the view finder sequence are used to estimate
+                the
+                color. However, there are no realistic large scale temporal color constancy datasets for method
+                evaluation.
+                In this work, a new temporal CC benchmark is introduced. The benchmark comprises of (1) 600 real-world
+                sequences recorded with a high-resolution mobile phone camera, (2) a fixed train-test split which
+                ensures
+                consistent evaluation, and (3) a baseline method which achieves high accuracy in the new benchmark and
+                the
+                dataset used in previous works. Results for more than 20 well-known color constancy methods including
+                the
+                recent state-of-the-arts are reported in our experiments.
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Datasets -->
+    <div class="w3-content w3-container w3-padding-64" id="datasets">
+        <h2 class="w3-center">DATASETS FOR TCC</h2>
+        <div>
+            <h4>TCC Dataset</h4>
+            <h5>Download links: <a href="https://www.cs.ubc.ca/research/tcc/datasets/tcc/">RAW + PNG</a> [60 GB] or <a
+                    href="https://drive.google.com/file/d/1bz8KPT2Lve6FknVgtbLN3rvMgYrPZVjm/view?usp=sharing">PNG</a>
+                [14
+                GB]</h5>
+            <p>Related paper: <a href="https://arxiv.org/abs/2003.03763">A Benchmark for Temporal Color Constancy</a>
+            </p>
+            <p><em>Yanlin Qian, Jani Käpylä, Joni-Kristian Kämäräinen, Samu Koskinen, Jiri Matas (ArXiv, 2020)</em></p>
+            <p>
+                The benchmark dataset comprises 600 real-world sequences recorded with a high-resolution mobile phone
+                camera and a fixed train-test split which ensures consistent evaluation. Results for more than 20
+                well-known
+                color constancy methods including the recent state-of-the-arts are reported in the related paper.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+    <div class="w3-padding">
+        <p>Want your research to featured on this website? <a
+                href="mailto:marizzo@cs.ubc.ca?subject=[TCC Website] - Your Request">Get in touch!</a></p>
+        <p>This website is hosted by the <a href="https://www.cs.ubc.ca/"> UBC CS department </a></p>
+    </div>
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+<script>
+    // Change style of navbar on scroll
+    window.onscroll = function () {
+        const navbar = document.getElementById("big-nav");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        } else {
+            navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        }
+    };
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+        const x = document.getElementById("small-nav");
+        if (x.className.indexOf("w3-show") === -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+
+</body>
+</html>

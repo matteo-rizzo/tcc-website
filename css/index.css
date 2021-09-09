@@ -1,0 +1,45 @@
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    color: black;
+    line-height: 1.8;
+}
+
+h2, span {
+    font-weight: bolder;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 40vh;
+    background-image: url('/../img/bg.jpg');
+}
+
+#about img {
+    max-width: 90%;
+}
+
+.w3-hover-opacity {
+    cursor: pointer;
+}
+
+@media (max-width: 601px) {
+    #title {
+        font-size: x-large !important;
+        padding: 0 !important;
+    }
+    #subtitle {
+        display: none;
+    }
+}
