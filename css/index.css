@@ -23,7 +23,7 @@ h4 {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 40vh;
-    background-image: url('/../img/bg.jpg');
+    background-image: url('../img/bg.jpg');
 }
 
 #about img {
