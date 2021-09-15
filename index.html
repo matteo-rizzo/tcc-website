@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/w3.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="js/index.js"></script>
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -127,9 +128,9 @@
         <h2 class="w3-center">DATASETS FOR TCC</h2>
         <div>
             <h4>TCC Dataset</h4>
-            <h5>Download links: <a href="https://www.cs.ubc.ca/research/tcc/datasets/tcc/">RAW + PNG</a> [60 GB] or <a
+            <h5>Download links: <a href="https://www.cs.ubc.ca/research/tcc/datasets/test/">RAW + PNG</a> [~56 GB] or <a
                     href="https://drive.google.com/file/d/1bz8KPT2Lve6FknVgtbLN3rvMgYrPZVjm/view?usp=sharing">PNG</a>
-                [14
+                [~14
                 GB]</h5>
             <p>Related paper: <a href="https://arxiv.org/abs/2003.03763">A Benchmark for Temporal Color Constancy</a>
             </p>
@@ -154,28 +155,6 @@
     </div>
     <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 </footer>
-
-<script>
-    // Change style of navbar on scroll
-    window.onscroll = function () {
-        const navbar = document.getElementById("big-nav");
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-        } else {
-            navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-        }
-    };
-
-    // Used to toggle the menu on small screens when clicking on the menu button
-    function toggleFunction() {
-        const x = document.getElementById("small-nav");
-        if (x.className.indexOf("w3-show") === -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
-</script>
 
 </body>
 </html>
